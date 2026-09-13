@@ -22,6 +22,13 @@ else:
 
 pct_change_grid=close_df.pct_change().dropna()
 cum_pct_change=(1+pct_change_grid).cumprod()-1
+annualised_volatility = pct_change_grid.std() * (252 ** 0.5)
+# here we assume r_date=log(1+pct_change) is iid. Therefore var(r_year) = var(r_date) * 252
+drawdown=(cum_pct_change- cum_pct_change.cummax()) / cum_pct_change.cummax()
+maximum_drawdown=drawdown.min()*-1
+#maximum of the difference between historical high up to date and the current value. Why there's denominator?
 print(close_df)
 print(pct_change_grid)
 print(cum_pct_change)
+print(annualised_volatility)
+print(maximum_drawdown)
