@@ -30,6 +30,11 @@ maximum_drawdown=drawdown.min()*-1
 sharpe_ratio=pct_change_grid.mean()/ annualised_volatility * 252 
 #sharp ratio= mean annual return / std annual return
 corr_matrix=pct_change_grid.corr()
+chosen_stock='AAPL'
+beta=close_df.pct_change().cov()[chosen_stock]['^GSPC']/close_df.pct_change().var()['^GSPC']
+# reflects how a change in market return affects change in stock's return
+alpha=pct_change_grid.mean()[chosen_stock]-beta*(pct_change_grid.mean()['^GSPC'])
+# how much does chosen stock beat market benchmark
 print(close_df)
 print(pct_change_grid)
 print(cum_pct_change)
@@ -37,3 +42,4 @@ print(annualised_volatility)
 print(maximum_drawdown)
 print(sharpe_ratio)
 print(corr_matrix)
+print(beta)
