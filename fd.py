@@ -14,7 +14,7 @@ if os.path.exists(cache_file):
     close_df = pd.read_csv(cache_file, index_col=0, parse_dates=True,date_format='%Y-%m-%d')
 else:
     print("Downloading fresh data from Yahoo Finance...")
-    df = yf.download(['AAPL', 'MSFT', 'GOOGL', 'NVDA','AMZN', 'SPY'], start='2020-01-01', end='2024-01-01')
+    df = yf.download(['AAPL', 'MSFT', 'GOOGL', 'NVDA','AMZN', 'SPY','^GSPC'], start='2020-01-01', end='2024-01-01')
     close_df = df['Close']
     
     # Save the downloaded data to your hard drive for next time
@@ -26,9 +26,14 @@ annualised_volatility = pct_change_grid.std() * (252 ** 0.5)
 # here we assume r_date=log(1+pct_change) is iid. Therefore var(r_year) = var(r_date) * 252
 drawdown=(cum_pct_change- cum_pct_change.cummax()) / cum_pct_change.cummax()
 maximum_drawdown=drawdown.min()*-1
-#maximum of the difference between historical high up to date and the current value. Why there's denominator?
+#maximum of the difference between historical high up to date and the current value divided by peak value?
+sharpe_ratio=pct_change_grid.mean()/ annualised_volatility * 252 
+#sharp ratio= mean annual return / std annual return
+corr_matrix=pct_change_grid.corr()
 print(close_df)
 print(pct_change_grid)
 print(cum_pct_change)
 print(annualised_volatility)
 print(maximum_drawdown)
+print(sharpe_ratio)
+print(corr_matrix)
