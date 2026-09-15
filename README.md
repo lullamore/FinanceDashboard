@@ -1,4 +1,4 @@
-                                                      # Interactive Financial Dashboard
+# Interactive Financial Dashboard
 
 An interactive web application built with Streamlit that allows users to analyze, compare, and compute key financial metrics for various stocks and ETFs over custom timeframes.
 
@@ -18,7 +18,7 @@ An interactive web application built with Streamlit that allows users to analyze
 
 ## 📸 Dashboard Preview
 
-![[Screenshot 2026-09-14 222549.png]]
+![Sample](Screenshot_222549.png)
 
 ## 🛠️ Technologies Used
 
