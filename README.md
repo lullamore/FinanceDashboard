@@ -1,4 +1,4 @@
-# Interactive Financial Dashboard
+                                                      # Interactive Financial Dashboard
 
 An interactive web application built with Streamlit that allows users to analyze, compare, and compute key financial metrics for various stocks and ETFs over custom timeframes.
 
@@ -13,13 +13,12 @@ An interactive web application built with Streamlit that allows users to analyze
   * Beta
   * Total Return
   * Annualized Return
-  * Annualized Valatility
+  * Annualized Volatility
 * **Interactive Data Visualization**: View results in a clean, sortable Statistical Summary table.
 
 ## 📸 Dashboard Preview
 
-![Financial Dashboard Screenshot](Screenshot 2026-09-14 222549.png)
-*(Note: Ensure image_ecdc66.png is uploaded to the root of your GitHub repository or an assets folder for this link to work)*
+![[Screenshot 2026-09-14 222549.png]]
 
 ## 🛠️ Technologies Used
 
@@ -34,7 +33,9 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash  
-   git clone [https://github.com/lullamore/FinanceDashboard.git](https://github.com/lullamore/FinanceDashboard.git)
+   git clone https://github.com/lullamore/FinanceDashboard.git
+   ```
+   ```bash
    cd FinanceDashboard
    ```
 2. **Install the prereq:**
