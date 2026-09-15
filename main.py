@@ -13,7 +13,7 @@ st.markdown(
 
 tickers = st.sidebar.multiselect(
     "Select Tickers / ETFs",
-    options=["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "QQQ", "SPY"],
+    options=["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "QQQ"],
     default=["AAPL", "MSFT", "NVDA"]
 )
 
@@ -26,8 +26,8 @@ start_date,end_date=st.date_input('Daterange',value=(start_date,end_date))
 
 # --- 2: User Inputs (Indicators) ---
 st.sidebar.header("2. Metrics Setup")
-available_metrics = [
-    "Cumulative Return", "Annualized Volatility", 
+available_metrics = ["Total Return",
+    "Annualized Return", "Annualized Volatility", 
     "Max Drawdown", "Sharpe Ratio", "Beta", "Alpha"
 ]
 selected_metrics = st.sidebar.multiselect(

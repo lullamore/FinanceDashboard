@@ -1,2 +1,3 @@
 .venv
 market_data_cache.csv
+__pycache__
