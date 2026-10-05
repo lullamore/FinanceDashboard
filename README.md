@@ -13,7 +13,7 @@ An interactive web application built with Streamlit that allows users to analyze
   * Beta
   * Total Return
   * Annualized Return
-  * Annualized Valatility
+  * Annualized Volatility
 * **Interactive Data Visualization**: View results in a clean, sortable Statistical Summary table.
 * **Persistent Market Data Cache**: Stores adjusted closing prices in SQLite and reuses them when the requested ticker/date range has already been fetched.
 
@@ -21,8 +21,7 @@ The cache database is created as `market_data_cache.sqlite3` in the project dire
 
 ## 📸 Dashboard Preview
 
-![Financial Dashboard Screenshot](Screenshot 2026-09-14 222549.png)
-*(Note: Ensure image_ecdc66.png is uploaded to the root of your GitHub repository or an assets folder for this link to work)*
+![Sample](Screenshot_222549.png)
 
 ## 🛠️ Technologies Used
 
@@ -37,7 +36,9 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash  
-   git clone [https://github.com/lullamore/FinanceDashboard.git](https://github.com/lullamore/FinanceDashboard.git)
+   git clone https://github.com/lullamore/FinanceDashboard.git
+   ```
+   ```bash
    cd FinanceDashboard
    ```
 2. **Install the prereq:**
