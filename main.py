@@ -22,7 +22,11 @@ rfr = st.sidebar.number_input("Risk-Free Rate (%)", value=2.0, step=0.1) / 100
 start_date = datetime.date(2020, 1, 1)
 end_date = datetime.date.today()
 
-start_date,end_date=st.date_input('Daterange',value=(start_date,end_date))
+date_range = st.date_input("Daterange", value=(start_date, end_date))
+if len(date_range) != 2:
+    st.info("Select both a start and end date.")
+    st.stop()
+start_date, end_date = date_range
 
 # --- 2: User Inputs (Indicators) ---
 st.sidebar.header("2. Metrics Setup")
@@ -51,8 +55,14 @@ if not tickers:
 else:
     all_tickers = list(set(tickers + ['SPY']))
     
-    with st.spinner("Fetching market data..."):
-        prices = fetch_data.fetch_historical_prices(all_tickers, start_date, end_date)
+    try:
+        with st.spinner("Fetching market data..."):
+            prices = fetch_data.fetch_historical_prices(
+                all_tickers, start_date, end_date
+            )
+    except Exception as exc:
+        st.error(f"Unable to fetch market data: {exc}")
+        st.stop()
     
     if prices.empty:
         st.error("No data fetched. Check your tickers and date range.")
@@ -76,4 +86,3 @@ else:
             filtered_stats.set_index("Ticker").style.format("{:.3f}"), 
             use_container_width=True
         )
-

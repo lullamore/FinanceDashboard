@@ -15,6 +15,9 @@ An interactive web application built with Streamlit that allows users to analyze
   * Annualized Return
   * Annualized Valatility
 * **Interactive Data Visualization**: View results in a clean, sortable Statistical Summary table.
+* **Persistent Market Data Cache**: Stores adjusted closing prices in SQLite and reuses them when the requested ticker/date range has already been fetched.
+
+The cache database is created as `market_data_cache.sqlite3` in the project directory. A dashboard request makes at most one batched yfinance download for tickers whose requested date range is not fully cached; fully covered requests make no yfinance call. The selected start and end dates are both inclusive.
 
 ## 📸 Dashboard Preview
 

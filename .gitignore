@@ -1,3 +1,4 @@
 .venv
 market_data_cache.csv
+market_data_cache.sqlite3*
 __pycache__
